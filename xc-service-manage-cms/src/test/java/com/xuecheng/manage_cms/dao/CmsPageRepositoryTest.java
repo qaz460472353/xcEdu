@@ -6,9 +6,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @SpringBootTest
@@ -24,7 +26,7 @@ public class CmsPageRepositoryTest {
         ExampleMatcher exampleMatcher = ExampleMatcher.matching();
         exampleMatcher = exampleMatcher.withMatcher("pageAliase", ExampleMatcher.GenericPropertyMatchers.contains());
         //页面别名模糊查询，需要自定义字符串的匹配器实现模糊查询
-        //ExampleMatcher.GenericPropertyMatchers.contains() 包含
+        //ExampleMatcher.GenericPropertyMatchers.contains() 包含
         //ExampleMatcher.GenericPropertyMatchers.startsWith()//开头匹配
         //条件值
         CmsPage cmsPage = new CmsPage();

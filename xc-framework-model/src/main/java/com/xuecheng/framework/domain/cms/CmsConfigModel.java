@@ -12,9 +12,13 @@ import java.util.Map;
 @ToString
 public class CmsConfigModel {
     private String key;
+    //项目名称
     private String name;
+    //项目url
     private String url;
+    //项目复杂值
     private Map mapValue;
+    //项目简单值
     private String value;
 
 }

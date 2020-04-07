@@ -17,7 +17,9 @@ public class CmsConfig {
 
     @Id
     private String id;
+    //数据模型项目
     private String name;
+    //数据模型项目
     private List<CmsConfigModel> model;
 
 }
