@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Created by admin on 2018/2/7.
+ * Created by admin on 2020/5/6.
  */
 @Data
 @ToString
@@ -17,7 +17,9 @@ import java.io.Serializable;
 @GenericGenerator(name = "jpa-assigned", strategy = "assigned")
 //@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 public class Category implements Serializable {
+
     private static final long serialVersionUID = -906357110051689484L;
+
     @Id
     @GeneratedValue(generator = "jpa-assigned")
     @Column(length = 32)

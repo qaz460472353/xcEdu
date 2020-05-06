@@ -5,13 +5,13 @@ import lombok.ToString;
 
 @Data
 @ToString
-public class QueryResponseResult extends ResponseResult {
+public class QueryResponseResult<Object> extends ResponseResult {
 
     QueryResult queryResult;
 
     public QueryResponseResult(ResultCode resultCode,QueryResult queryResult){
         super(resultCode);
-       this.queryResult = queryResult;
+        this.queryResult = queryResult;
     }
 
 }

@@ -3,6 +3,7 @@ package com.xuecheng.manage_cms;
 import com.mongodb.client.gridfs.GridFSBucket;
 import com.mongodb.client.gridfs.GridFSDownloadStream;
 import com.mongodb.client.gridfs.model.GridFSFile;
+import com.mongodb.gridfs.GridFSDBFile;
 import org.apache.commons.io.IOUtils;
 import org.bson.types.ObjectId;
 import org.junit.Test;
@@ -15,10 +16,7 @@ import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * @author Administrator
@@ -67,4 +65,31 @@ public class GridFsTest {
         //根据文件id删除fs.files和fs.chunks中的记录
         gridFsTemplate.delete(Query.query(Criteria.where("_id").is("5b32480ed3a022164c4d2f92")));
     }
+
+    /*
+        @Test
+        public void testGridFs() throws FileNotFoundException {
+            //要存储的文件
+            File file = new File("d:/index_banner.html");
+            //定义输入流
+            FileInputStream inputStram = new FileInputStream(file);
+            //向GridFS存储文件
+            ObjectId gridFSFile = gridFsTemplate.store(inputStram, "轮播图测试文件01", "");
+            //得到文件ID
+            String fileId = gridFSFile.toString();
+            System.out.println(file);
+        }
+        @Test
+        public void queryFile() throws IOException {
+            String fileId = "5b32480ed3a022164c4d2f92";
+            //根据文件id查询GridFS
+            GridFSDBFile gridFSDBFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(fileId)));
+            //得到输入流
+            InputStream inputStream = gridFSDBFile.getInputStream();
+            //定义输出流
+            FileOutputStream fileOutputStream = new FileOutputStream(new File("d:/index_banner01.html"));
+            //写文件
+            IOUtils.copy(inputStream,fileOutputStream);
+        }*/
+
 }

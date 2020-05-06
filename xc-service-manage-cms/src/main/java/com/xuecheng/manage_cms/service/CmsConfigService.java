@@ -11,6 +11,7 @@ import java.util.Optional;
 public class CmsConfigService {
     @Autowired
     CmsConfigRepository cmsConfigRepository;
+    
     //根据id查询配置管理信息
     public CmsConfig getConfigById(String id){
         Optional<CmsConfig> optional = cmsConfigRepository.findById(id);
